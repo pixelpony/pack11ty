@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}">
-<head>
-{% include "head.njk" %}
-</head>
+  <head>
+    {% include "head.njk" %}
+  </head>
 
-<body
+  <body
   data-img-src="{{ page.inputPath | dirname }}/"
   data-img-dist="{{ page.outputPath | dirname }}/"
 >
-<div class="page">
-  {# 
-  Use Every Layout's sidebar layout:
-  https://absolutely.every-layout.dev/layouts/sidebar/
-  #}
-  <div class="with-sidebar">
-    <div>
-      <div class="sidebar">
+    <div class="page">
+      {% if page.url == '/' %}
+        <h1 class="sitelogo">{{ pkg.title }}</h1>
+      {% else %}
+        <p class="sitelogo">
+          <a href="/">{{ pkg.title }}</a>
+        </p>
+      {% endif %}
 
-        <header role="banner" class="cluster">
-          <div>
-            <div class="sitelogo-parent">
-              {% if page.url == '/' %}
-                <h1 class="sitelogo">{{ pkg.title }}</h1>
-              {% else %}
-                <p class="sitelogo"><a href="/">{{ pkg.title }}</a></p>
-              {% endif %}
-            </div>
-            <div>
-              {% include "components/navigation.njk" %}
-            </div>
-          </div>
-        </header>
-
-      </div>
-      <div class="not-sidebar">
-        <main role="main">
-          {% block content %}
+      <main role="main">
+        {% block content %}
           {{ content | safe }}
-          {% endblock %}
-        </main>
-      </div>
+        {% endblock %}
+      </main>
     </div>
-  </div>
-  {% include "components/footer.njk" %}
-</div>
+    {% include "components/footer.njk" %}
 
-<link rel="stylesheet" href="/css/{{ hashes_css['additional.css'] }}" />
+    <link rel="stylesheet" href="/css/{{ hashes_css['additional.css'] }}"/>
 
-{#
+    {#
 https://buzut.net/configurer-rollup-bundles-esm-cjs/
 https://v8.dev/features/modules#browser
 #}
-<script async type="module" src="/js/{{ hashes_additional_es['src/_assets/js/additional.js']}}"></script>
-<script async nomodule src="/js/{{ hashes_additional_iife['src/_assets/js/additional.js']}}"></script>
-</body>
+    <script async type="module" src="/js/{{ hashes_additional_es['src/_assets/js/additional.js']}}"></script>
+    <script async nomodule src="/js/{{ hashes_additional_iife['src/_assets/js/additional.js']}}"></script>
+  </body>
 
 </html>
