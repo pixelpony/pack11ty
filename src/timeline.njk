@@ -1,0 +1,86 @@
+---
+title: Career Timeline
+date: 2020-04-15T13:46:59.890Z
+years:
+  - 2020
+  - 2019
+  - 2018
+  - 2017
+  - 2016
+  - 2015
+  - 2014
+  - 2013
+  - 2012
+  - 2011
+  - 2010
+  - 2009
+  - 2008
+  - 2007
+  - 2006
+  - 2005
+  - 2004
+  - 2003
+  - 2002
+  - 2001
+  - 2000
+  - 1999
+  - 1998
+  - 1997
+  - 1996
+  - 1995
+jobs:
+  - flanghorn
+  - yarn
+  - knewton
+  - opensky
+  - flavors
+  - meetup
+  - schwa
+---
+
+<div class="career-timeline">
+
+    {% for year in years %}
+        <div class="year-label year-label-{{ year }}">{{ year }}</div>
+        <div class="year-line year-line-{{ year }}"></div>
+    {% endfor %}
+
+    {% for job in jobs %}
+        <div class="duration duration-{{ job }}"></div>
+    {% endfor %}
+
+    {{ content | safe }}
+
+    <div class="summary summary-flanghorn">
+        <h3>Flanghorn Omnimedia</h3>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+        pulvinar vitae turpis nec feugiat. Fusce mollis viverra nisl, vel
+        placerat sapien eleifend quis. Aenean accumsan elementum accumsan.
+        Vestibulum fringilla nunc et nunc pulvinar, et aliquam turpis
+        tincidunt. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Quisque sit amet volutpat diam, quis
+        pharetra augue. Quisque sollicitudin sem sed ipsum bibendum, eu
+        elementum nibh mollis. Nam sollicitudin ante fermentum dolor rhoncus
+        tempor. Suspendisse eleifend nisi sit amet felis suscipit semper.
+        Morbi hendrerit at ipsum ut euismod. Curabitur dignissim finibus arcu
+        at imperdiet. Curabitur ornare fermentum magna.
+    </p>
+    </div>
+    <div class="summary summary-yarn">
+        <h3>Yarn (Samsung)</h3>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+        pulvinar vitae turpis nec feugiat. Fusce mollis viverra nisl, vel
+        placerat sapien eleifend quis. Aenean accumsan elementum accumsan.
+        Vestibulum fringilla nunc et nunc pulvinar, et aliquam turpis
+        tincidunt. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Quisque sit amet volutpat diam, quis
+        pharetra augue. Quisque sollicitudin sem sed ipsum bibendum, eu
+        elementum nibh mollis. Nam sollicitudin ante fermentum dolor rhoncus
+        tempor. Suspendisse eleifend nisi sit amet felis suscipit semper.
+        Morbi hendrerit at ipsum ut euismod. Curabitur dignissim finibus arcu
+        at imperdiet. Curabitur ornare fermentum magna.
+    </p>
+    </div>
+</div>

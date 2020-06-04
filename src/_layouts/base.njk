@@ -9,12 +9,11 @@
   data-img-dist="{{ page.outputPath | dirname }}/"
 >
     <div class="page">
-      {% if page.url == '/' %}
-        <h1 class="sitelogo">{{ pkg.title }}</h1>
-      {% else %}
-        <p class="sitelogo">
-          <a href="/">{{ pkg.title }}</a>
-        </p>
+      {% if page.url !== '/' %}
+        <nav role="navigation" aria-label="main-navigation">
+          <a href="/">
+            <img alt="navigate up" src="/images/arrow-up-4.svg"/> Derek Odegard</a>
+        </nav>
       {% endif %}
 
       <main role="main">
